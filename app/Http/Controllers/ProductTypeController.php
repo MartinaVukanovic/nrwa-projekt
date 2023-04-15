@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\ProductType;
 
 class ProductTypeController extends Controller
 {
@@ -13,7 +14,10 @@ class ProductTypeController extends Controller
      */
     public function index()
     {
-        //
+        $Products = ProductType::all();
+        
+        return view('ProductType/index',compact('Products'));
+
     }
 
     /**
@@ -23,7 +27,7 @@ class ProductTypeController extends Controller
      */
     public function create()
     {
-        return view('create');
+        return view('ProductType/create');
     }
 
     /**
@@ -34,7 +38,14 @@ class ProductTypeController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validatedData = $request->validate([
+            'product_type_cd' => 'required|max:255',
+		    'name' => 'required|max:50',
+        ]);
+        $show = ProductType::create($validatedData);
+   
+        return redirect('/productType')->with('success', 'Product type is successfully saved');
+
     }
 
     /**
@@ -56,29 +67,46 @@ class ProductTypeController extends Controller
      */
     public function edit($id)
     {
-        //
+        $Product = ProductType::findOrFail($id);
+
+        return view('ProductType/edit', compact('Product'));
+
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param  int  $product_type_cd
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, $product_type_cd)
     {
-        //
+        $validatedData = $request->validate([
+            'product_type_cd' => 'required|max:255',
+            'name' => 'max:50'
+        ]);
+        $Product = ProductType::find($product_type_cd);
+        $Product->product_type_cd = $request->get('product_type_cd');
+        $Product->name = $request->get('name');
+        $Product->save();
+
+        return redirect('/productType')->with('success', 'Product type is successfully updated');
     }
+
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param  int  $product_type_cd
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy($product_type_cd)
     {
-        //
+        $Product = ProductType::findOrFail($product_type_cd);
+        $Product->delete();
+
+        return redirect('/productType')->with('success', 'Product type is successfully deleted');
     }
+
 }

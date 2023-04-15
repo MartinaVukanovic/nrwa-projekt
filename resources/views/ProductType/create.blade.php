@@ -1,4 +1,4 @@
-@extends('layout')
+@extends('ProductType/layout')
 
 @section('content')
 <style>
@@ -8,7 +8,7 @@
 </style>
 <div class="card uper">
   <div class="card-header">
-    Add Products Data
+    Add product type data
   </div>
   <div class="card-body">
     @if ($errors->any())
@@ -23,20 +23,15 @@
       <form method="post" action="{{ route('productType.store') }}">
           <div class="form-group">
               @csrf
-              <label for="country_name">Product Name:</label>
-              <input type="text" class="form-control" name="name"/>
+              <label for="product_type_cd">Product Type CD:</label>
+              <input type="text" class="form-control" name="product_type_cd"/>
           </div>
           <div class="form-group">
               @csrf
-              <label for="country_name">Product Description:</label>
-              <input type="text" class="form-control" name="description"/>
+              <label for="name">Product type name:</label>
+              <input type="text" class="form-control" name="name"/>
           </div>
-
-          <div class="form-group">
-              <label for="cases">Price :</label>
-              <input type="text" class="form-control" name="price"/>
-          </div>
-          <button type="submit" class="btn btn-primary">Add Product</button>
+          <button type="submit" class="btn btn-primary">Add product type</button>
       </form>
   </div>
 </div>
