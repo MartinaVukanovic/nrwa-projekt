@@ -20,18 +20,17 @@
         </ul>
       </div><br />
     @endif
-      <form method="post" action="{{ route('productType.store') }}">
+      <form method="post" action="{{ route('department.store') }}">
           <div class="form-group">
               @csrf
-              <label for="product_type_cd">Product Type CD:</label>
-              <input type="text" class="form-control" name="product_type_cd"/>
+              <p>Department ID is autoincremented.</p>
           </div>
           <div class="form-group">
               @csrf
-              <label for="name">Product type name:</label>
+              <label for="name">Department Name:</label>
               <input type="text" class="form-control" name="name"/>
           </div>
-          <button type="submit" class="btn btn-primary">Add product type</button>
+          <button type="submit" class="btn btn-primary">Add department</button>
       </form>
   </div>
 </div>

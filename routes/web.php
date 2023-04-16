@@ -17,7 +17,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::resource('product', 'ProductController');
 Route::resource('productType', 'ProductTypeController');
+Route::resource('department', 'DepartmentController');
+
 Auth::routes();
 
 Route::patch('/productType/{product_type_cd}', [ProductTypeController::class, 'update'])->name('productType.update');

@@ -20,13 +20,9 @@
         </ul>
       </div><br />
     @endif
-    <form method="post" action="{{ route('productType.update', $Product->product_type_cd ) }}">
+    <form method="post" action="{{ route('department.update', $Product->dept_id ) }}">
         @csrf
           @method('PATCH')
-          <div class="form-group">
-              <label for="product_type_cd">Product type CD:</label>
-              <input type="text" class="form-control" name="product_type_cd" value="{{ $Product->product_type_cd }}"/>
-          </div>
           <div class="form-group">
               <label for="name">Product type Name:</label>
               <input type="text" class="form-control" name="name" value="{{ $Product->name }}"/>

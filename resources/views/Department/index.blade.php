@@ -19,20 +19,20 @@
   <table class="table table-striped">
     <thead>
         <tr>
-          <td>Product type code</td>
-          <td>Product Name</td>
+          <td>Department ID</td>
+          <td>Department Name</td>
           <td colspan="2">Action</td>
         </tr>
     </thead>
     <tbody>
         @foreach($Products as $Product)
         <tr>
-            <td>{{$Product->product_type_cd}}</td>
+            <td>{{$Product->dept_id}}</td>
             <td>{{$Product->name}}</td>
             </td>
-            <td><a href="{{ route('productType.edit', $Product->product_type_cd)}}" class="btn btn-primary">Edit</a></td>
+            <td><a href="{{ route('department.edit', $Product->dept_id)}}" class="btn btn-primary">Edit</a></td>
             <td>
-                <form action="{{ route('productType.destroy', $Product->product_type_cd)}}" method="post">
+                <form action="{{ route('department.destroy', $Product->dept_id)}}" method="post">
                   @csrf
                   @method('DELETE')
                   <button class="btn btn-danger" type="submit">Delete</button>
@@ -43,7 +43,7 @@
     </tbody>
   </table>
   <div style="display: flex; justify-content: center">
-  <a href="{{ url('productType/create')}}" class="btn btn-secondary">Create</a>
+  <a href="{{ url('department/create')}}" class="btn btn-secondary">Create</a>
   </div>
 <div>
 @endsection
