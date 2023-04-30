@@ -38,11 +38,15 @@
             @endif
 
             <div>
+            <a href="{{ url('/business') }}">Business CRUD</a>
+            <br>
+            <a href="{{ url('/customer') }}">Customer CRUD</a>
+            <br>
+            <a href="{{ url('/department') }}">Department CRUD</a>
+            <br>
             <a href="{{ url('/product') }}">Product CRUD</a>
             <br>
             <a href="{{ url('/productType') }}">Product type CRUD</a>
-            <br>
-            <a href="{{ url('/department') }}">Department CRUD</a>
             </div>
             
 

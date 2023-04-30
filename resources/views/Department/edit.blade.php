@@ -23,7 +23,7 @@
     <form method="post" action="{{ route('department.update', $Product->dept_id ) }}">
         @csrf
           @method('PATCH')
-          <div class="form-group">
+          <div class="form-group" style="margin-bottom: 15px;">
               <label for="name">Product type Name:</label>
               <input type="text" class="form-control" name="name" value="{{ $Product->name }}"/>
           </div>

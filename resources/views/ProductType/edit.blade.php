@@ -27,7 +27,7 @@
               <label for="product_type_cd">Product type CD:</label>
               <input type="text" class="form-control" name="product_type_cd" value="{{ $Product->product_type_cd }}"/>
           </div>
-          <div class="form-group">
+          <div class="form-group" style="margin-bottom: 15px;">
               <label for="name">Product type Name:</label>
               <input type="text" class="form-control" name="name" value="{{ $Product->name }}"/>
           </div>

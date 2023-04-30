@@ -39,9 +39,13 @@
               <label for="date_retired">Date Retired:</label>
               <input type="date" class="form-control" name="date_retired" value="{{ $Product->date_retired }}"/>
           </div>
-          <div class="form-group">
+          <div class="form-group" style="margin-bottom: 15px;">
               <label for="product_type_c">Product Type CD:</label>
-              <input type="text" class="form-control" name="product_type_cd" value="{{ $Product->product_type_cd }}"/>
+              <select class="form-select" name="product_type_cd">
+                  @foreach (\App\Models\ProductType::all() as $type)
+                      <option value="{{ $type->product_type_cd }}">{{ $type->name }}</option>
+                  @endforeach
+              </select>
           </div>
           <button type="submit" class="btn btn-primary">Update Data</button>
       </form>

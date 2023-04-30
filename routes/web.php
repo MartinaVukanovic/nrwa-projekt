@@ -20,10 +20,9 @@ Route::get('/', function () {
 Route::resource('product', 'ProductController');
 Route::resource('productType', 'ProductTypeController');
 Route::resource('department', 'DepartmentController');
+Route::resource('customer', 'CustomerController');
+Route::resource('business', 'BusinessController');
 
 Auth::routes();
-
-Route::patch('/productType/{product_type_cd}', [ProductTypeController::class, 'update'])->name('productType.update');
-Route::delete('/productType/{product_type_cd}', [ProductTypeController::class, 'destroy'])->name('productType.destroy');
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

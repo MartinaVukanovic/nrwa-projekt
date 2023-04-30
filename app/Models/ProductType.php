@@ -12,4 +12,10 @@ class ProductType extends Model
     public $incrementing = false;
     protected $keyType = 'string';
     protected $fillable = ['product_type_cd', 'name'];
+    public $timestamps = false;
+
+    public function products()
+    {
+        return $this->hasMany(Product::class, 'product_type_cd', 'product_type_cd');
+    }
 }

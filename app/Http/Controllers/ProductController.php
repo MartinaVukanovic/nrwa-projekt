@@ -39,10 +39,15 @@ class ProductController extends Controller
     {
         $validatedData = $request->validate([
             'product_cd' => 'required',
-		    'name' => 'required',
-		    'date_offered' => 'required',
-		    'date_retired' => 'required',
-		    'product_type_cd' => 'required',
+            'name' => 'required',
+            'date_offered' => 'required',
+            'date_retired' => [
+                'required',
+                'after_or_equal:date_offered',
+            ],
+            'product_type_cd' => 'required',
+        ], [
+            'date_retired.after_or_equal' => 'The date retired must be after or equal to the date offered.'
         ]);
 
         $show = Product::create($validatedData);

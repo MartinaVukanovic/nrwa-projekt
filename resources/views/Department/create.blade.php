@@ -25,7 +25,7 @@
               @csrf
               <p>Department ID is autoincremented.</p>
           </div>
-          <div class="form-group">
+          <div class="form-group" style="margin-bottom: 15px;">
               @csrf
               <label for="name">Department Name:</label>
               <input type="text" class="form-control" name="name"/>
