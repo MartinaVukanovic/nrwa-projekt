@@ -22,6 +22,12 @@ Route::resource('productType', 'ProductTypeController');
 Route::resource('department', 'DepartmentController');
 Route::resource('customer', 'CustomerController');
 Route::resource('business', 'BusinessController');
+Route::resource('individual', 'IndividualController');
+Route::resource('officer', 'OfficerController');
+Route::resource('branch', 'BranchController');
+Route::resource('employee', 'EmployeeController');
+Route::resource('account', 'AccountController');
+Route::resource('accTransaction', 'AccTransactionController');
 
 Auth::routes();
 

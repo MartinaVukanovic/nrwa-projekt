@@ -8,7 +8,7 @@
 </style>
 <div class="card uper">
   <div class="card-header">
-    Edit Business Data
+    Edit Individual Data
   </div>
   <div class="card-body">
     @if ($errors->any())
@@ -20,20 +20,20 @@
         </ul>
       </div><br />
     @endif
-    <form method="post" action="{{ route('business.update', $Product->cust_id ) }}">
+    <form method="post" action="{{ route('individual.update', $Product->cust_id ) }}">
         @csrf
           @method('PATCH')
           <div class="form-group">
-              <label for="name">Name:</label>
-              <input type="text" class="form-control" name="name" value="{{ $Product->name }}"/>
+              <label for="first_name">First name:</label>
+              <input type="text" class="form-control" name="first_name" value="{{ $Product->first_name }}"/>
           </div>
           <div class="form-group">
-              <label for="state_id">State Id:</label>
-              <input type="text" class="form-control" name="state_id" value="{{ $Product->state_id }}"/>
+              <label for="last_name">Last name:</label>
+              <input type="text" class="form-control" name="last_name" value="{{ $Product->last_name }}"/>
           </div>
           <div class="form-group" style="margin-bottom: 15px;">
-              <label for="incorp_date">Incorp Date:</label>
-              <input type="date" class="form-control" name="incorp_date" value="{{ $Product->incorp_date }}"/>
+              <label for="birth_date">Birth date:</label>
+              <input type="date" class="form-control" name="birth_date" value="{{ $Product->birth_date }}"/>
           </div>
           <button type="submit" class="btn btn-primary">Update Data</button>
       </form>
