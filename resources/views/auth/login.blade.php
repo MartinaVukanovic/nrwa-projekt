@@ -2,6 +2,11 @@
 
 @section('content')
 <div class="container">
+<!--
+<a href="/auth/github/redirect">
+  Sign in with Github
+</a>
+--> 
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
@@ -64,10 +69,50 @@
                                 @endif
                             </div>
                         </div>
+                        <div class="g-container">
+                        <div class="google">
+                        <img src="{{ asset('/img/google.png') }}" alt="" width="20px">
+                        <a href="/auth/google/redirect" class="googleText">
+                            Log in with Google
+                        </a>
+                        </div>
+                        </div>
                     </form>
                 </div>
             </div>
         </div>
     </div>
 </div>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700;800&display=swap" rel="stylesheet">
+<style>
+    * {
+        font-family: 'Poppins', sans-serif;
+    }
+    .g-container {
+        display: flex;
+        justify-content: center;
+    }
+    .google {
+        width: 60%;
+        gap: 8px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border: 1px solid #bcbcbc;
+        border-radius: 6px;
+        padding: 6px 0px;
+        margin-top: 20px;
+    }
+    .googleText {
+        font-weight: 500;
+        color: black;
+        text-decoration: none;
+    }
+    .googleText:hover {
+        color: black;
+        text-decoration: none;
+    }
+</style>
 @endsection

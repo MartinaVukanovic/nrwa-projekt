@@ -7,6 +7,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class ProductType extends Model
 {
+    protected $table = 'product_type';
+
     use HasFactory;
     protected $primaryKey = 'product_type_cd';
     public $incrementing = false;

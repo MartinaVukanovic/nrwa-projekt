@@ -7,6 +7,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Officer extends Model
 {
+    protected $table = 'officer';
+
     use HasFactory;
     public $timestamps = false;
     protected $primaryKey = 'officer_id';

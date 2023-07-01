@@ -20,8 +20,8 @@
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
-                <a class="navbar-brand" href="{{ url('/') }}">
-                    bank database
+                <a class="navbar-brand" href="{{ url('/') }}" style="font-weight: 500;">
+                 <img src="{{ asset('/img/bank.png') }}" alt="" width="50px" style="margin: 0px 10px;">
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
@@ -39,13 +39,13 @@
                         @guest
                             @if (Route::has('login'))
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+                                    <a class="nav-link login-button" href="{{ route('login') }}">{{ __('Login') }}</a>
                                 </li>
                             @endif
 
                             @if (Route::has('register'))
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
+                                    <a class="nav-link register-button" href="{{ route('register') }}">{{ __('Register') }}</a>
                                 </li>
                             @endif
                         @else
@@ -78,3 +78,24 @@
     </div>
 </body>
 </html>
+<style>
+    .login-button {
+        border: 1px solid #898888;
+        border-radius: 5px;
+        padding: 6px 12px !important;
+        margin: 0px 6px;
+    }
+
+    .register-button {
+        border: 1px solid #ffffff;
+        border-radius: 6px;
+        padding: 6px 12px !important;
+        margin: 0px 6px;
+        color: white;
+        background-color: #0B5ED7;
+    }
+
+    .register-button:hover {
+        color: white;
+    }
+</style>

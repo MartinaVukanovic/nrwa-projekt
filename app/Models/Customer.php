@@ -7,6 +7,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Customer extends Model
 {
+    protected $table = 'customer';
+
     use HasFactory;
     protected $primaryKey = 'cust_id';
     public $incrementing = false;

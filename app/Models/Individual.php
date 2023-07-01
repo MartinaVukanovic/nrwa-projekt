@@ -7,6 +7,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Individual extends Model
 {
+    protected $table = 'individual';
+
     use HasFactory;
     public $timestamps = false;
     protected $primaryKey = 'cust_id';

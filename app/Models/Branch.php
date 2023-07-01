@@ -7,6 +7,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Branch extends Model
 {
+    protected $table = 'branch';
+
     use HasFactory;
     public $timestamps = false;
     protected $primaryKey = 'branch_id';
