@@ -94,8 +94,16 @@
             @endif
 
             @if (!auth()->user())
-            <a href="{{ route('login') }}" class="login-button">Log in</a>
-            <a href="{{ route('register') }}" class="register-button">Register</a>
+            <div>
+                <div class="card-container" style="width: 300px !important;" >
+                    <a href="{{ url('/bankInformations') }}">bank informations</a>
+                </div>
+                <div style="margin-top: 25px;">
+                    <a href="{{ route('login') }}" class="login-button">Log in</a>
+                    <a href="{{ route('register') }}" class="register-button">Register</a>
+                </div>
+            </div>
+           
             @endif
 
             @if (auth()->user() && auth()->user()->role == 'admin')

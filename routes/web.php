@@ -1,10 +1,8 @@
 <?php
 
 use App\Http\Controllers\Auth\ProviderController;
-use App\Http\Middleware\Role;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
-use Laravel\Socialite\Facades\Socialite;
 
 /*
 |--------------------------------------------------------------------------
@@ -32,6 +30,14 @@ Route::resource('branch', 'BranchController');
 Route::resource('employee', 'EmployeeController');
 Route::resource('account', 'AccountController');
 Route::resource('accTransaction', 'AccTransactionController');
+Route::resource('bankInformations', 'BankInformationsController');
+
+Route::get('/api/bankInformations', 'BankInformationsController@apiIndex');
+
+Route::get('/api/branch', 'BranchController@apiIndex');
+Route::post('/api/branch','BranchController@apiStore');
+Route::put('/api/branch/{id}', 'BranchController@apiUpdate');
+Route::delete('/api/branch/{id}', 'BranchController@apiDestroy');
 
 Auth::routes();
 
