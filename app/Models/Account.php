@@ -18,7 +18,7 @@ class Account extends Model
 
     public function customer()
     {
-        return $this->hasOne(Customer::class, 'cust_id', 'cust_id');
+        return $this->belongsTo(Customer::class, 'cust_id');
     }
 
     public function product()

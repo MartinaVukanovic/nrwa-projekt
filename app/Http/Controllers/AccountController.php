@@ -14,9 +14,9 @@ class AccountController extends Controller
          */
         public function index()
         {
-            $Products = Account::all();
+            $Products = Account::with('customer.individual')->get();
+            return view('account.index', compact('Products'));
             
-            return view('account/index',compact('Products'));
         }
     
         /**

@@ -19,7 +19,6 @@
   <table class="table table-striped">
     <thead>
         <tr>
-          <td>Department ID</td>
           <td>Department Name</td>
           <td colspan="2">Action</td>
         </tr>
@@ -27,7 +26,6 @@
     <tbody>
         @foreach($Products as $Product)
         <tr>
-            <td>{{$Product->dept_id}}</td>
             <td>{{$Product->name}}</td>
             </td>
             <td><a href="{{ route('department.edit', $Product->dept_id)}}" class="btn btn-primary">Edit</a></td>

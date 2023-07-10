@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Product;
+use Illuminate\Support\Facades\Response;
 
 class ProductController extends Controller
 {
@@ -22,6 +23,26 @@ class ProductController extends Controller
         $Products = Product::all();
         
         return view('product/index',compact('Products'));
+    }
+
+    public function search(Request $request)
+    {
+
+        $searchValue = $request->input('search');
+        $query = Product::query();
+
+        if ($searchValue) {
+            $query->where(function ($q) use ($searchValue) {
+                $q->where('product_cd', 'LIKE', "%$searchValue%")
+                    ->orWhere('name', 'LIKE', "%$searchValue%")
+                    ->orWhere('product_type_cd', 'LIKE', "%$searchValue%");
+            });
+        }
+
+        $products = $query->get();
+
+        return response()->json($products);
+
     }
 
     /**

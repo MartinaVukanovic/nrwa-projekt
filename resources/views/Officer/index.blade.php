@@ -41,7 +41,7 @@
             <td>{{$Product->last_name}}</td>
             <td>{{$Product->start_date}}</td>
             <td>{{$Product->end_date}}</td>
-            <td>{{$Product->cust_id}}</td>
+            <td style="color:blue !important; cursor:pointer" onclick="location.href=`/customer/{{$Product->cust_id}}/edit`;">{{$Product->cust_id}}</td>
             </td>
             <td><a href="{{ route('officer.edit', $Product->officer_id)}}" class="btn btn-primary">Edit</a></td>
             <td>

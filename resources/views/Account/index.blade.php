@@ -25,7 +25,7 @@
           <td>Open date</td>
           <td>Pending balance</td>
           <td>Status</td>
-          <td>Customer Id</td>
+          <td>Customer address</td>
           <td>Open branch id</td>
           <td>Open employee id</td>
           <td>Product code</td>
@@ -41,7 +41,7 @@
             <td>{{$Product->open_date}}</td>
             <td>{{$Product->pending_balance }}</td>
             <td>{{$Product->status }}</td>
-            <td>{{$Product->cust_id }}</td>
+            <td>{{ $Product->customer->address }}</td>
             <td>{{$Product->open_branch_id }}</td>
             <td>{{$Product->open_emp_id }}</td>
             <td>{{$Product->product_cd }}</td>

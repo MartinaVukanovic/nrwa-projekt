@@ -15,4 +15,14 @@ class Customer extends Model
     public $timestamps = false;
     protected $keyType = 'string';
     protected $fillable = ['cust_id', 'address', 'city', 'cust_type_cd', 'fed_id', 'postal_code', 'state'];
+
+    public function account()
+    {
+        return $this->hasMany(Account::class, 'cust_id');
+    }
+
+    public function individual()
+    {
+        return $this->hasOne(Individual::class, 'cust_id', 'cust_id');
+    }
 }

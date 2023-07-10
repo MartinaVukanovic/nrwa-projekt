@@ -38,6 +38,7 @@ Route::get('/api/branch', 'BranchController@apiIndex');
 Route::post('/api/branch','BranchController@apiStore');
 Route::put('/api/branch/{id}', 'BranchController@apiUpdate');
 Route::delete('/api/branch/{id}', 'BranchController@apiDestroy');
+Route::get('/api/product/search', 'ProductController@search');
 
 Auth::routes();
 

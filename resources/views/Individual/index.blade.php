@@ -37,7 +37,7 @@
             <td>{{$Product->first_name}}</td>
             <td>{{$Product->last_name}}</td>
             <td>{{$Product->birth_date}}</td>
-            <td>{{$Product->cust_id}}</td>
+            <td style="color:blue !important; cursor:pointer" onclick="location.href=`/customer/{{$Product->cust_id}}/edit`;">{{$Product->cust_id}}</td>
             </td>
             <td><a href="{{ route('individual.edit', $Product->cust_id)}}" class="btn btn-primary">Edit</a></td>
             <td>

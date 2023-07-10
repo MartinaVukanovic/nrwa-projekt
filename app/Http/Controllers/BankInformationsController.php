@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\Response;
 use App\Models\Branch;
 use App\Models\Product;
 use App\Models\Officer;
+use App\Models\ProductType;
 
 class BankInformationsController extends Controller
 {
@@ -19,11 +20,14 @@ class BankInformationsController extends Controller
         $branches = Branch::all();
         $products = Product::All();
         $officer = Officer::All();
+        $productTypes = ProductType::All();
+
 
         $data = [
             'branches' => $branches,
             'products' => $products,
             'officers' => $officer,
+            'productTypes' => $productTypes,
         ];
         
         return Response::json([$data]);

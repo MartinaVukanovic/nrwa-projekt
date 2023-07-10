@@ -15,13 +15,6 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        // \App\Models\User::factory(10)->create();
-
-        // \App\Models\User::factory()->create([
-        //     'name' => 'Test User',
-        //     'email' => 'test@example.com',
-        // ]);
-
         // Insert product_type data
         DB::table('product_types')->insert([
             ['product_type_cd' => 'ACCOUNT', 'name' => 'Customer Accounts'],
